@@ -53,7 +53,7 @@ func main() {
 		fmt.Println(num)
 	}
 	// self defined print fucntion, everything must be of string type
-	print("ur mom got bent over ", arr, " too many times.")
+	print("ur mom got bent over ", dict, " too many times.")
 }
 
 func print(a ...interface{}) {
@@ -80,7 +80,11 @@ func str(a interface{}) string {
 		for i, key := range v.MapKeys() {
 			val := v.MapIndex(key)
 			if i > 0 {
+				if i < v.Len()-1 {
+					new_string += ","
+				}
 				new_string += " "
+
 			}
 			new_string += fmt.Sprintf("%v:%v", key, val)
 		}
